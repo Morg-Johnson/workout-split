@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Workout Planner</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div>
+          <h1>Weekly Workout Planner</h1>
+          <p class="subtitle">Assign muscle groups or exercises to each day. Get warned if you train the same muscle group two days in a row.</p>
+        </div>
+        <div class="header-actions">
+          <button id="clearBtn" class="button button-secondary" type="button">Clear week</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Add an exercise</h2>
+          </div>
+          <form id="addForm" class="form">
+            <label class="field">
+              <span class="label">Day</span>
+              <select id="daySelect" required></select>
+            </label>
+
+            <label class="field">
+              <span class="label">Exercise (optional)</span>
+              <input id="exerciseInput" type="text" placeholder="e.g., Bench Press" />
+            </label>
+
+            <label class="field">
+              <span class="label">Muscle group</span>
+              <input id="muscleInput" type="text" placeholder="e.g., Chest" required />
+              <span class="help">Tip: use consistent names (e.g., "Back" not "Lats" sometimes and "Back" other times).</span>
+            </label>
+
+            <div class="form-actions">
+              <button class="button" type="submit">Add</button>
+              <button id="seedBtn" class="button button-secondary" type="button">Add sample week</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Your week</h2>
+            <div id="warningSummary" class="warning-summary" aria-live="polite"></div>
+          </div>
+
+          <div id="weekGrid" class="week-grid" aria-label="Weekly plan"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Saved locally in your browser.</span>
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
